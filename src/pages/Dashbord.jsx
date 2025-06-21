@@ -1,5 +1,6 @@
 import { BarCharts } from "../components/BarChart";
 import { Card } from "../components/Card";
+import { DonutChart } from "../components/DonutChart";
 import { SummaryCard } from "../components/summaryCard";
 
 export function Dashboard(){
@@ -13,7 +14,7 @@ export function Dashboard(){
                     <SummaryCard nom="Savings"/>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <div className="col-span-2">
+                    <div className=" left-column col-span-2">
                         <BarCharts/>
                         <div id="card-display" class="card bg-white rounded-2xl shadow-md p-6 mb-6">
                               <div class="flex justify-between items-center mb-6">
@@ -29,6 +30,9 @@ export function Dashboard(){
                             </div>
                             
                         </div>
+                    </div>
+                    <div className="right-column">
+                        <DonutChart/>
                     </div>
                     
                 </div>
