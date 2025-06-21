@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 
 export function SideBar(){
-    return(<div id="sidebar" class="w-60 bg-blue-gray border-r border-gray-200 h-full flex flex-col">
+    return(<div id="sidebar" class="w-60 bg-blue-gray border-r border-gray-200 h-full flex flex-col fixed">
             <div class="p-6 flex items-center border-b border-gray-200">
                 <div class="text-primary text-2xl mr-2">
                     <i class="fa-solid fa-wallet"></i>
