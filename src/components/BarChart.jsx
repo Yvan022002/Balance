@@ -1,79 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { Chart } from 'chart.js/auto';
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, CartesianAxis, Legend } from 'recharts';
 
-export function BarChart() {
-    const chartRef = useRef(null); // contiendra le <canvas>
-    const chartInstanceRef = useRef(null); // pour éviter de recréer le graphique à chaque rendu
-
-    useEffect(() => {
-        if (chartRef.current && !chartInstanceRef.current) {
-            const ctx = chartRef.current.getContext('2d');
-            chartInstanceRef.current = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                    datasets: [
-                        {
-                            label: 'Income',
-                            data: [4500, 5200, 4800, 5800, 6000, 5500],
-                            backgroundColor: '#0A84FF',
-                            borderRadius: 8,
-                            barPercentage: 0.5,
-                        },
-                        {
-                            label: 'Expenses',
-                            data: [3200, 3800, 3600, 4200, 4500, 4000],
-                            backgroundColor: '#EF4444',
-                            borderRadius: 8,
-                            barPercentage: 0.5,
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                            labels: {
-                                boxWidth: 10,
-                                usePointStyle: true,
-                                pointStyle: 'circle'
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                drawBorder: false,
-                                color: '#E5E7EB'
-                            },
-                            ticks: {
-                                callback: function(value) {
-                                    return '$' + value;
-                                }
-                            }
-                        },
-                        x: {
-                            grid: {
-                                display: false
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        // Cleanup
-        return () => {
-            if (chartInstanceRef.current) {
-                chartInstanceRef.current.destroy();
-                chartInstanceRef.current = null;
-            }
-        };
-    }, []);
-
+export function BarCharts() {
+    const data = [
+    { name: 'Jan', income: 4000, expenses: 2400 },
+    { name: 'Feb', income: 3000, expenses: 1398 },
+    { name: 'Mar', income: 2000, expenses: 9800 },
+    { name: 'Apr', income: 2780, expenses: 3908 },
+    { name: 'May', income: 1890, expenses: 4800 },
+    { name: 'Jun', income: 2390, expenses: 3800 },
+    ];
     return (
         <div id="spending-overview" className="lg:col-span-2">
             <div id="spending-chart-card" className="card bg-white rounded-2xl shadow-md p-6 mb-6">
@@ -85,7 +22,16 @@ export function BarChart() {
                     </div>
                 </div>
                 <div className="h-[300px]">
-                    <canvas ref={chartRef} className="chartComponents w-full h-full"></canvas>
+                    <ResponsiveContainer>
+                        <BarChart data={data}>
+                            <Legend/>
+                            <XAxis dataKey="name"/>
+                            <YAxis/>
+                            <Bar dataKey="income" fill="#0A84FF" radius={[10, 10, 0, 0]}/>
+                            <Bar dataKey="expenses" fill="#EF4444" radius={[10, 10, 0, 0]}/>
+                        </BarChart>
+                    </ResponsiveContainer>
+                    
                 </div>
             </div>
         </div>

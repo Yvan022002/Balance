@@ -1,4 +1,4 @@
-import { BarChart } from "../components/BarChart";
+import { BarCharts } from "../components/BarChart";
 import { SummaryCard } from "../components/summaryCard";
 
 export function Dashboard(){
@@ -12,7 +12,7 @@ export function Dashboard(){
                     <SummaryCard nom="Savings"/>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <BarChart/>
+                    <BarCharts/>
                 </div>
             </div>
            
