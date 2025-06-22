@@ -85,7 +85,7 @@ export function Transactions(){
                                 </div>
                             </div>
                         </div>
-                       
+                        <TransactionsOverview/>
                         </div>
                     <div className="right-column col-span-1">
                         <DonutChart/>
