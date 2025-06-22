@@ -6,7 +6,7 @@ export function SideBar(){
                 <div class="text-primary text-2xl mr-2">
                     <i class="fa-solid fa-wallet"></i>
                 </div>
-                <h1 class="text-xl font-semibold text-dark-gray">FinTrack</h1>
+                <h1 class="text-2xl font-bold text-dark-gray">Balance</h1>
             </div>
             
             <div class="overflow-y-auto flex-1">

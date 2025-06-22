@@ -2,6 +2,7 @@ import { BarCharts } from "../components/BarChart";
 import { Card } from "../components/Card";
 import { DonutChart } from "../components/DonutChart";
 import { SummaryCard } from "../components/summaryCard";
+import { TransactionPreview } from "../components/TransactionPreview";
 
 export function Dashboard(){
     return(
@@ -31,8 +32,9 @@ export function Dashboard(){
                             
                         </div>
                     </div>
-                    <div className="right-column">
+                    <div className="right-column col-span-1">
                         <DonutChart/>
+                        <TransactionPreview/>
                     </div>
                     
                 </div>
