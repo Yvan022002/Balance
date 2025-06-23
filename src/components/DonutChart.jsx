@@ -11,7 +11,7 @@ export function DonutChart(){
 
     const COLORS = ['#3B82F6','#10B981','#EF4444','#FACC15','#8B5CF6'];
    return (
-    <div className="bg-white rounded-xl shadow-md p-4 w-full">
+    <div className="bg-white rounded-xl shadow-md p-4 w-full card">
       <div className="flex justify-between items-center mb-2">
         <h2 className="text-sm font-semibold text-gray-700">Expense Categories</h2>
         <button>

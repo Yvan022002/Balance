@@ -1,5 +1,6 @@
 import { BarCharts } from "../components/BarChart";
 import { Card } from "../components/Card";
+import { CategoriesBreakdown } from "../components/CategoriesBreakdown";
 import { DonutChart } from "../components/DonutChart";
 import { SummaryCard } from "../components/summaryCard";
 import { TransactionPreview } from "../components/TransactionPreview";
@@ -89,7 +90,7 @@ export function Transactions(){
                         </div>
                     <div className="right-column col-span-1">
                         <DonutChart/>
-                        <TransactionPreview/>
+                        <CategoriesBreakdown/>
                     </div>
                     
                 </div>
