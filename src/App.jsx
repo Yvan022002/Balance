@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './index.css'
 import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import { DashboardLayout } from './layouts/DashBoardLayout'
 import { Transactions } from './pages/Transactions'
 import { Contacts } from './pages/Contacts'
@@ -47,8 +47,6 @@ const router= createBrowserRouter(
 )
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
         <RouterProvider router={router}/>
   )
